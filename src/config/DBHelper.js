@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 19:36:49
- * @LastEditTime: 2020-07-15 19:37:42
+ * @LastEditTime: 2020-07-16 10:25:08
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -13,4 +13,24 @@ import mongoose from 'mongoose'
 import config from './index'
 
 
-mongoose.set()
+mongoose.set('useCreateIndex',true)
+
+mongoose.connect(config.DB_URL,{
+  useNewUrlParser:true,
+  useUnifiedTopology:true
+})
+
+mongoose.connection.on('connected',()=>{
+  console.log(`Mongoose connection open to ${config.DB_URL}`)
+})
+
+
+mongoose.connection.on('error',(err)=>{
+  console.log(`Mongoose connection error: ${err}`)
+})
+
+mongoose.connection.on('disconnected',()=>{
+  console.log('Mongoose connection disconnected')
+})
+
+export default mongoose

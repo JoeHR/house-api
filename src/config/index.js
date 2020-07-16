@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 19:33:57
- * @LastEditTime: 2020-07-15 19:36:24
+ * @LastEditTime: 2020-07-16 12:18:10
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -9,7 +9,7 @@
  * @函数:  - 小驼峰式命名法（前缀应当为动词）
  * @这不是一个 bug，这只是一个未列出来的特性
  */ 
-const DB_URL = 'mongodb://test:123456@116.62.114.170:27017/housedb'
+const DB_URL = 'mongodb://shroom:11aaBBCC@116.62.114.170:27017/shroomdb'
 
 const REDIS = {
   host:'116.62.114.170',

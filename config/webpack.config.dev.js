@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 18:55:27
- * @LastEditTime: 2020-07-15 18:56:49
+ * @LastEditTime: 2020-07-16 11:01:09
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -12,6 +12,7 @@
 const webpackMerge =require('webpack-merge')
 
 const baseWebpackConfig = require('./webpack.config.base')
+console.log('baseWebpackConfig', baseWebpackConfig)
 
 module.exports = webpackMerge(baseWebpackConfig,{
   mode:'development',

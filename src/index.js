@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 17:43:33
- * @LastEditTime: 2020-07-15 19:21:27
+ * @LastEditTime: 2020-07-16 11:16:32
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -44,4 +44,8 @@ if(process.env.NODE_ENV==='production'){
 app.use(middleware)
 app.use(router())
 
+// app.use(async ctx=>{
+//   ctx.body="hello world"
+// })
+console.log(router)
 app.listen(3000)

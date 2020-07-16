@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 17:48:19
- * @LastEditTime: 2020-07-15 17:51:46
+ * @LastEditTime: 2020-07-16 10:53:23
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -23,10 +23,11 @@ exports.getWebpackResolveConfig = function(customAlias = {}){
   const appPath = exports.APP_PATH
 
   return {
-    modules:[appPath,'node_modules'],
+    modules:[appPath,exports.resolve('node_modules')],
     extensions:['.js','.json'],
     alias:{
       '@':appPath,
+      'src':exports.resolve('src'),
       ...customAlias
     }
   }

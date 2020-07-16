@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 19:29:48
- * @LastEditTime: 2020-07-15 19:31:37
+ * @LastEditTime: 2020-07-16 11:17:39
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -11,10 +11,12 @@
  */ 
 
 import Router from 'koa-router'
-import houseController from '@/api/HouseController'
+import houseController from '../../api/HouseController'
 
 const router  = new Router()
 
-router.prefix('house')
+router.prefix('/house')
 
 router.get('/list',houseController.getList)
+
+export default router
