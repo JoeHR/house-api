@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 19:05:38
- * @LastEditTime: 2020-07-15 19:10:24
+ * @LastEditTime: 2020-07-16 12:42:44
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -9,12 +9,12 @@
  * @函数:  - 小驼峰式命名法（前缀应当为动词）
  * @这不是一个 bug，这只是一个未列出来的特性
  */ 
-const webpackMerge = require('webpack-merge')
+const {merge} = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.config.base')
 
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 
-module.exports=webpackMerge(baseWebpackConfig,{
+module.exports=merge(baseWebpackConfig,{
   mode:'production',
   stats:{children:false,warnings:false},
   optimization:{
