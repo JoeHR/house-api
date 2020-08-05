@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-22 20:17:25
- * @LastEditTime: 2020-08-05 21:17:08
+ * @LastEditTime: 2020-08-05 21:15:26
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -13,28 +13,26 @@ import mongoose from '../config/DBHelper'
 
 const Schema = mongoose.Schema
 
-const CollectSchema = new Schema({
+const CategorySchema = new Schema({
   // 分类
-  en: { type: String, default: '' },
+  category: { type: String, default: '' },
   //合集名称
-  name: { type: String, default: '' },
+  category_desc: { type: String, default: '' },
   // 标题名称		
-  title: { type: String, default: '' },
+  category_code: { type: String, unique: true },
   // 描述		
   desc: { type: String, default: '' },
   // 标签		
-  tag: { type: String, default: '' },
-  // 合集分类
-  category_code: { type: Schema.Types.ObjectId, ref: 'users' }
+  tag: { type: String, default: '' }
 })
 
 
-CollectSchema.statics = {
+CategorySchema.statics = {
   getList:function(){
     return this.find()
   }
 }
 
-const Collect = mongoose.model('Collect',CollectSchema)
+const Category = mongoose.model('Category',CategorySchema)
 
-export default Collect
+export default Category
