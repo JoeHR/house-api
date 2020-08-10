@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-22 20:17:25
- * @LastEditTime: 2020-08-05 21:17:08
+ * @LastEditTime: 2020-08-10 19:35:57
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -25,13 +25,13 @@ const CollectSchema = new Schema({
   // 标签		
   tag: { type: String, default: '' },
   // 合集分类
-  category_code: { type: Schema.Types.ObjectId, ref: 'users' }
+  category_code: { type: Schema.Types.String, ref: 'Category' }
 })
 
 
 CollectSchema.statics = {
-  getList:function(){
-    return this.find()
+  getList:function(options){
+    return this.find(options)
   }
 }
 

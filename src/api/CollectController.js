@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 19:31:55
- * @LastEditTime: 2020-07-23 11:24:12
+ * @LastEditTime: 2020-08-10 19:34:20
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -10,10 +10,16 @@
  * @这不是一个 bug，这只是一个未列出来的特性
  */ 
 import Collect from '../model/collect';
+import qs from 'qs'
 
 class CollectController {
   async getList (ctx) {
-    const result = await Collect.getList()
+    const body = qs.parse(ctx.query)
+    const options = {}
+    if(body.category_code && typeof body.category_code === 'string'){
+      options.category_code = body.category_code
+    }
+    const result = await Collect.getList(options)
     ctx.body={
       code:200,
       data:result,
