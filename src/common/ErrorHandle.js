@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 19:21:45
- * @LastEditTime: 2020-07-23 16:17:32
+ * @LastEditTime: 2020-08-10 18:52:28
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -19,6 +19,7 @@ export default (ctx,next)=>{
       }
     }else {
       ctx.status = err.status || 500
+      console.log(err)
       ctx.body = Object.assign(
         {
           code: 500,

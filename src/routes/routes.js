@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-15 19:26:43
- * @LastEditTime: 2020-07-23 11:03:01
+ * @LastEditTime: 2020-08-10 09:46:37
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -12,6 +12,7 @@
 import combineRoutes from 'koa-combine-routers'
 import HouseRouter from './modules/HouseRouter'
 import CollectRouter from './modules/CollectRouter'
+import CategoryRouter from './modules/CategoryRouter'
 // import requireContext from 'require-context'
 // console.log('requireContext', requireContext)
 
@@ -29,5 +30,6 @@ import CollectRouter from './modules/CollectRouter'
 
 export default combineRoutes(
   HouseRouter,
-  CollectRouter
+  CollectRouter,
+  CategoryRouter
 )

@@ -1,7 +1,7 @@
 /*
  * @Author: rh
  * @Date: 2020-07-22 20:17:25
- * @LastEditTime: 2020-08-05 21:15:26
+ * @LastEditTime: 2020-08-10 09:51:39
  * @LastEditors: rh
  * @Description: 命名规范
  * @变量: - 小驼峰式命名法（前缀应当是名词）
@@ -14,14 +14,12 @@ import mongoose from '../config/DBHelper'
 const Schema = mongoose.Schema
 
 const CategorySchema = new Schema({
-  // 分类
+  // 分类名称
   category: { type: String, default: '' },
-  //合集名称
+  // 分类描述
   category_desc: { type: String, default: '' },
-  // 标题名称		
+  // 分类标识		
   category_code: { type: String, unique: true },
-  // 描述		
-  desc: { type: String, default: '' },
   // 标签		
   tag: { type: String, default: '' }
 })
