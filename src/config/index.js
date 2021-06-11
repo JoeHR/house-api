@@ -11,7 +11,8 @@
  */
 import path from 'path'
 const DB_URL = 'mongodb://shroom:11aaBBCC@116.62.114.170:27017/shroomdb'
-const uploadPath = process.env.NODE_ENV === 'production' ? '/app/public' : path.join(path.resolve(__dirname), '../../public')
+// const uploadPath = process.env.NODE_ENV === 'production' ? '/app/public' : path.join(path.resolve(__dirname), '../../public')
+const uploadPath = path.join(path.resolve(__dirname), '../../public')
 
 const REDIS = {
   host:'116.62.114.170',

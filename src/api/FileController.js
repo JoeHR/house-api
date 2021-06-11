@@ -38,7 +38,7 @@ class FileController {
     //   highWaterMark: 1 * 1024
     // })
     const upStream = fs.createWriteStream(destPath)
-    const filePath = `/img/${moment().format('YYYYMMDD')}/${picname}.${ext}`
+    const filePath = `http://116.62.114.170:3000/img/${moment().format('YYYYMMDD')}/${picname}.${ext}`
     // method1
     reader.pipe(upStream)
     ctx.body = {
