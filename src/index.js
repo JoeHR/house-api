@@ -8,7 +8,7 @@
  * @常量: - 全大写（使用大写字母和下划线来组合命名，下划线用以分割单词）
  * @函数:  - 小驼峰式命名法（前缀应当为动词）
  * @这不是一个 bug，这只是一个未列出来的特性
- */ 
+ */
 import Koa from 'koa'
 import path from 'path'
 import helmet from 'koa-helmet'
@@ -21,7 +21,7 @@ import compose from 'koa-compose'
 import compress from 'koa-compress'
 import errorHandle from './common/ErrorHandle'
 
-
+console.log(1111)
 const app = new Koa()
 
 // app.use(helmet())
@@ -29,7 +29,14 @@ const app = new Koa()
 // app.use(router())
 
 const middleware = compose([
-  koaBody(),
+  koaBody({
+    multipart: true,
+    formidable: {
+      keepExtensions: true,
+      maxFieldsSize: 5 * 1024 * 1024
+    },
+    onError: err => console.log('koabody TCL: err', err)
+  }),
   statics(path.join(__dirname,'../public')),
   cors(),
   jsonutil({pretty:false,param:'pretty'}),
@@ -47,5 +54,5 @@ app.use(router())
 // app.use(async ctx=>{
 //   ctx.body="hello world"
 // })
-console.log(router)
+
 app.listen(3000)
