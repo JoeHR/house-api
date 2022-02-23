@@ -10,14 +10,14 @@
  * @这不是一个 bug，这只是一个未列出来的特性
  */
 import path from 'path'
-const DB_URL = 'mongodb://shroom:11aaBBCC@116.62.114.170:27017/shroomdb'
+const DB_URL = 'mongodb://shroom:11aaBBCC@121.5.130.129:27017/shroomdb'
 // const uploadPath = process.env.NODE_ENV === 'production' ? '/app/public' : path.join(path.resolve(__dirname), '../../public')
 const uploadPath = path.join(path.resolve(__dirname), '../../public')
 
 const REDIS = {
-  host:'116.62.114.170',
+  host:'121.5.130.129',
   port:15001,
-  password:'123456'
+  password:'11aaBBCC'
 }
 
 export default{
